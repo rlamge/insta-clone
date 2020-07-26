@@ -8,6 +8,8 @@ import {db} from '../Firebase'
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import {Button} from '@material-ui/core';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 function getModalStyle() {
     const top = 50;
@@ -45,7 +47,14 @@ function getModalStyle() {
       small: {
         width: theme.spacing(3.5),
         height: theme.spacing(3.5),
+        marginLeft: '5px',
       },
+
+      delbutton: {
+        width: theme.spacing(0.5),
+        height: theme.spacing(0.5),
+        color:'#0095F6'
+      }
   }));
 
 function Post({postId, username, caption, imageUrl, user}) {
@@ -120,19 +129,23 @@ function Post({postId, username, caption, imageUrl, user}) {
 
                 <div className="post__deletebutton">
                     {user &&
-                        (<Button className={classes.child} disabled={user.displayName!==username} onClick={() => setOpenDeletePost(true)}>Delete</Button>
+                        (
+                            <IconButton className={classes.delbutton} disabled={user.displayName!==username} onClick={() => setOpenDeletePost(true)} aria-label="delete">
+                                <DeleteIcon />
+                            </IconButton>
+                        // {/* <Button className={classes.child} disabled={user.displayName!==username} onClick={() => setOpenDeletePost(true)}>Delete</Button> */}
                     )}
                 </div>
             </div>
             
             <img className="post__image"src={imageUrl}></img>
 
-            <h4 className="post__text"><strong className="post__captionusername">{username} </strong> {caption}</h4>
+            <h4 style={{color:'#454545'}} className="post__text"><strong className="post__captionusername">{username} </strong> {caption}</h4>
 
             <div className="post__comments">
                 {
                 comments.map((comment) => (
-                    <p>
+                    <p style={{color:'#454545'}}>
                         <strong className="post__commentusername">{comment.username}</strong> {comment.text}
                     </p>
                 ))  

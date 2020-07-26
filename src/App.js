@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
+import Embedding from './component/Embedding'
 
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import {Button, Input} from '@material-ui/core';
-
-import InstagramEmbed from 'react-instagram-embed';
 
 import Post from './component/Post';
 import ImageUpload from './component/ImageUpload';
@@ -116,21 +115,21 @@ function App() {
                 placeholder="username"
                 type="text"
                 value={username}
-                onChange={(e)=>setUsername(e.target.value)}
+                onChange={(e) => setUsername(e.target.value)}
             />
 
             <Input
                 placeholder="email"
                 type="text"
                 value={email}
-                onChange={(e)=>setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
             />
 
             <Input
                 placeholder="password"
                 type="text"
                 value={password}
-                onChange={(e)=>setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
             />
             <Button onClick={signUp}>Sign up</Button>
           </form>
@@ -154,7 +153,7 @@ function App() {
                 placeholder="email"
                 type="text"
                 value={email}
-                onChange={(e)=>setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
             />
 
             <Input
@@ -163,11 +162,11 @@ function App() {
                 value={password}
                 onChange={(e)=>setPassword(e.target.value)}
             />
-            <Button onClick={signIn}>Sign In</Button>
+            <Button style={{}} onClick={signIn}>Sign In</Button>
           </form>
         </div>
       </Modal>
-      
+
       <div className="app__header"> 
         <img 
           className="app__headerImage" 
@@ -175,11 +174,11 @@ function App() {
         </img>  
         {
           user ? (
-            <Button onClick={() => auth.signOut()} >Logout</Button>
+            <Button style={{color: '#0095F6'}} onClick={() => auth.signOut()}>Logout</Button>
           ) : (
             <div className="app__loginContainer">
-            <Button onClick={() => setOpenSignIn(true)} >Sign In</Button>
-            <Button onClick={() => setOpen(true)} >Sign up</Button>
+              <Button variant="contained" style={{backgroundColor: '#0095F6', color:'white', marginRight:'5px'}} onClick={() => setOpenSignIn(true)}>Sign In</Button>
+              <Button style={{color: '#0095F6'}} onClick={() => setOpen(true)}>Sign up</Button>
             </div>
           )
         }
@@ -200,46 +199,11 @@ function App() {
             ))
           }
         </div>
+
         <div className="column app_postsRight">
-          <InstagramEmbed
-            url='https://www.instagram.com/p/CDEi1aoBIFZ/'
-            maxWidth={320}
-            hideCaption={false}
-            containerTagName='div'
-            protocol=''
-            injectScript
-            onLoading={() => {}}
-            onSuccess={() => {}}
-            onAfterRender={() => {}}
-            onFailure={() => {}}
-          />
-
-          <InstagramEmbed
-            url='https://www.instagram.com/p/CDBwMX1BzSb/'
-            maxWidth={320}
-            hideCaption={false}
-            containerTagName='div'
-            protocol=''
-            injectScript
-            onLoading={() => {}}
-            onSuccess={() => {}}
-            onAfterRender={() => {}}
-            onFailure={() => {}}
-          />
-
-          <InstagramEmbed
-            url='https://www.instagram.com/p/CDF8AN4Im5Q/'
-            maxWidth={320}
-            hideCaption={false}
-            containerTagName='div'
-            protocol=''
-            injectScript
-            onLoading={() => {}}
-            onSuccess={() => {}}
-            onAfterRender={() => {}}
-            onFailure={() => {}}
-          />
+          <Embedding />
         </div>
+
       </div>
       
       {user?.displayName ?

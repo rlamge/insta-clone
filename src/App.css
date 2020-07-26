@@ -45,6 +45,7 @@
 }
 
 .app__headerImage {
+  margin-left: 0.2rem;
   object-fit: contain;
 }
 
