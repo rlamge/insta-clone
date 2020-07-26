@@ -167,6 +167,7 @@ function App() {
           </form>
         </div>
       </Modal>
+      
       <div className="app__header"> 
         <img 
           className="app__headerImage" 

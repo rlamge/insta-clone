@@ -43,8 +43,8 @@ function getModalStyle() {
         },
 
       small: {
-        width: theme.spacing(4),
-        height: theme.spacing(4),
+        width: theme.spacing(3.5),
+        height: theme.spacing(3.5),
       },
   }));
 
