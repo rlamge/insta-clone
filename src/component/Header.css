@@ -1,0 +1,24 @@
+.header {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+    object-fit: contain;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__image {
+    margin-left: 0.2rem;
+    object-fit: contain;
+}
+
+.header__signup {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+

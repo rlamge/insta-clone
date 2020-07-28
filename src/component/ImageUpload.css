@@ -1,9 +1,9 @@
 .imageupload {
     display: flex;
     flex-direction: column;
-    width: 55%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     margin-top: 10px;
     margin-bottom: 10px;
     /* position: fixed;
@@ -13,3 +13,8 @@
 .imageupload__progress {
     width: 100%;
 }
+
+fabButton:hover {
+    color: black;
+}
+

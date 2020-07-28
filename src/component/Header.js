@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import Modal from '@material-ui/core/Modal';
 import {Button, Input} from '@material-ui/core';
-
 import { makeStyles } from '@material-ui/core/styles';
-
+import './Header.css'
 import { auth } from '../Firebase';
 
 function getModalStyle() {
@@ -89,41 +88,41 @@ export default function Header({user,
     const [modalStyle] = useState(getModalStyle);
 
     return (
-        <div>
+        <>
             <Modal
                 open={open}
                 onClose={() => setOpen(false)}
             >
                 <div style={modalStyle} className={classes.paper}>
-                <form className="app__signup">
-                    <center>
-                    <img 
-                        className="app__headerImage" 
-                        src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png">
-                    </img>
-                    </center>
-                    <Input
-                        placeholder="username"
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
+                    <form className="header__signup">
+                        <center>
+                            <img 
+                                className="app__headerImage" 
+                                src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png">
+                            </img>
+                        </center>
+                        <Input
+                            placeholder="username"
+                            type="text"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
 
-                    <Input
-                        placeholder="email"
-                        type="text"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
+                        <Input
+                            placeholder="email"
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
 
-                    <Input
-                        placeholder="password"
-                        type="text"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                    <Button onClick={signUp}>Sign up</Button>
-                </form>
+                        <Input
+                            placeholder="password"
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <Button onClick={signUp}>Sign up</Button>
+                    </form>
                 </div>
             </Modal>
 
@@ -132,48 +131,48 @@ export default function Header({user,
                 onClose={() => setOpenSignIn(false)}
             >
                 <div style={modalStyle} className={classes.paper}>
-                <form className="app__signup">
-                    <center>
-                    <img 
-                        className="app__headerImage" 
-                        src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png">
-                    </img>
-                    </center>
+                    <form className="header__signup">
+                        <center>
+                        <img 
+                            className="app__headerImage" 
+                            src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png">
+                        </img>
+                        </center>
 
-                    <Input
-                        placeholder="email"
-                        type="text"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
+                        <Input
+                            placeholder="email"
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
 
-                    <Input
-                        placeholder="password"
-                        type="text"
-                        value={password}
-                        onChange={(e)=>setPassword(e.target.value)}
-                    />
-                    <Button style={{}} onClick={signIn}>Sign In</Button>
-                </form>
+                        <Input
+                            placeholder="password"
+                            type="password"
+                            value={password}
+                            onChange={(e)=>setPassword(e.target.value)}
+                        />
+                        <Button style={{}} onClick={signIn}>Sign In</Button>
+                    </form>
                 </div>
             </Modal>
 
-            <div className="app__header"> 
+            <nav className="header"> 
                 <img 
-                className="app__headerImage" 
-                src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png">
+                    className="header__image" 
+                    src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png">
                 </img>  
                 {
                 user ? (
                     <Button style={{color: '#0095F6'}} onClick={() => auth.signOut()}>Logout</Button>
                 ) : (
-                    <div className="app__loginContainer">
-                    <Button variant="contained" style={{backgroundColor: '#0095F6', color:'white', marginRight:'5px'}} onClick={() => setOpenSignIn(true)}>Sign In</Button>
-                    <Button style={{color: '#0095F6'}} onClick={() => setOpen(true)}>Sign up</Button>
+                    <div className="header__loginContainer">
+                        <Button variant="contained" style={{backgroundColor: '#0095F6', color:'white', marginRight:'5px'}} onClick={() => setOpenSignIn(true)}>Sign In</Button>
+                        <Button style={{color: '#0095F6'}} onClick={() => setOpen(true)}>Sign up</Button>
                     </div>
                 )
                 }
-            </div>
-        </div>
+            </nav>
+        </>
     )
 }
