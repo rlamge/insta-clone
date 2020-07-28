@@ -78,7 +78,7 @@ function ImageUpload({username}) {
             "state_changed",
             (snapshot) => {
                 const progress = Math.round(
-                    (snapshot.byteTransferred / snapshot.totalBytes) * 100
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
                 );
                 setProgress(progress);
             },
@@ -135,19 +135,23 @@ function ImageUpload({username}) {
                                 src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png">
                             </img>
                         </center>
-                        <progress style={{color:'green'}} className="imageupload__progress" value={progress} max="100" > </progress>
+                    
                         <Input
+                            style={{margin: '10px 0'}}
                             placeholder="Enter a caption..."
                             type="text"
                             value={caption}
                             onChange={event => setCaption(event.target.value)}
                         />
                         <Input
+                            style={{margin: '10px 0'}}
                             type="file"
                             onChange={handleChange}
                         />
+                        <progress className="imageupload__progress" value={progress} max="100" > </progress>
+                        
                         <Button 
-                            style={{marginTop:"10px"}}
+                            style={{marginTop:"25px"}}
                             onClick={handleUpload}>
                             Upload
                         </Button>

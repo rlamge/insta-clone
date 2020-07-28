@@ -53,8 +53,9 @@
 
 .post__username {
     display: flex;
-    margin-left: 10px;
-    margin-top: 2px;
+    margin-left: 8px;
+    margin-top: 3px;
+    /* margin-bottom: 0; */
     /* margin-bottom: 6px; */
     color: 	#404040;
     font-weight: 600;
@@ -102,6 +103,7 @@
 
 .post__button {
     flex: 0;
+    padding: 0 15px;
     border: none;
     color: #6082a3;
     background-color: transparent;

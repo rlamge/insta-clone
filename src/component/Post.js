@@ -145,13 +145,12 @@ function Post({postId, username, caption, imageUrl, user}) {
             <div className="post__comments">
                 {
                 comments.map((comment) => (
-                    <p style={{color:'#454545'}}>
+                    <p style={{color:'#454545', marginBottom:"5px"}}>
                         <strong className="post__commentusername">{comment.username}</strong> {comment.text}
                     </p>
                 ))  
                 }
             </div>
-            
 
             {user && (
                 <form className="post__commentBox">
