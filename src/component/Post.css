@@ -20,11 +20,19 @@
         margin-bottom: 35px;
       /* margin: auto; */
     }
+
+    .post__image {
+        align-items: center;
+        min-width: 100%;
+        object-fit: contain;
+        overflow-x: hidden;
+        margin: 0;
+    }
 }
 
 .post__image {
     align-items: center;
-    max-width: 329px;
+    width: 100%;
     object-fit: contain;
     overflow-x: hidden;
     margin: 0;

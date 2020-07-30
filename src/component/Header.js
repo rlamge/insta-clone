@@ -56,7 +56,7 @@ export default function Header({user,
         return () => {
           unsubscribe();
         }
-      }, [user, username])
+      }, [user, setUser, username])
     
 
     const signUp = (event) => {

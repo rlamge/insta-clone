@@ -128,9 +128,9 @@ function Post({postId, username, caption, imageUrl, user}) {
                 </div>
 
                 <div className="post__deletebutton">
-                    {user &&
+                    {user.displayName===username &&
                         (
-                            <IconButton className={classes.delbutton} disabled={user.displayName!==username} onClick={() => setOpenDeletePost(true)} aria-label="delete">
+                            <IconButton className={classes.delbutton} onClick={() => setOpenDeletePost(true)} aria-label="delete">
                                 <DeleteIcon />
                             </IconButton>
                         // {/* <Button className={classes.child} disabled={user.displayName!==username} onClick={() => setOpenDeletePost(true)}>Delete</Button> */}
@@ -138,7 +138,7 @@ function Post({postId, username, caption, imageUrl, user}) {
                 </div>
             </div>
             
-            <img className="post__image"src={imageUrl}></img>
+            <img className="post__image" src={imageUrl}></img>
 
             <h4 style={{color:'#454545'}} className="post__text"><strong className="post__captionusername">{username} </strong> {caption}</h4>
 

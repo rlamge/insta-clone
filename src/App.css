@@ -15,19 +15,20 @@
 }
 
 .app_postsRight {
-  margin-left: 20px;
+  margin-left: 15px;
   justify-content: center;
 }
+
+/* .app_postsLeft {
+  margin-right: 250px;
+  justify-content: center;
+} */
 
 @media screen and (max-width: 725px) {
   .app__posts {
     flex-direction: column;
     align-items: center;
 
-  }
-
-  .app_postsRight {
-    margin-right: 25px;
   }
 }
 

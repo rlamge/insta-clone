@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+// import { Link, Switch, Route } from 'react-router';
 import './App.css'
 
 import Embedding from './component/Embedding'
@@ -46,7 +47,7 @@ function App() {
 
       {/* Posts */}
       <div className="app__posts">
-        <div className="column app__postsLeft">
+        <div className="app__postsLeft">
           {
             posts.map(({id, post}) => (
               <Post 
@@ -62,7 +63,7 @@ function App() {
         </div>
 
         {/* Embedding */}
-        <div className="column app_postsRight">
+        <div className="app_postsRight">
           <Embedding />
         </div>
 

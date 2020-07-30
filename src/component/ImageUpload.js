@@ -10,6 +10,7 @@ import Fab from '@material-ui/core/Fab';
 import { makeStyles } from '@material-ui/core/styles';
 import {Button, Input} from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 
 import { db, storage } from '../Firebase';
@@ -115,10 +116,17 @@ function ImageUpload({username}) {
     return (
         <>
             <AppBar position="sticky" className={classes.appBar}>
-                <Toolbar style={{background:"white" , borderTop: "1px solid lightgray"}}>
-                    <Fab style={{backgroundColor:'transparent'}} color="secondary" aria-label="add" className={classes.fabButton}>
-                        <AddIcon onClick={() => setOpenUpload(true)} style={{ color:'#0095F6'}}/>
+                <Toolbar style={{justifyContent:"center", alignItems:"center", background:"white" , borderTop: "1px solid lightgray", display:"flex"}}>
+                    <div style={{ marginLeft:"15px",display:"flex" ,justifyContent:"center", alignItems:"center"}}>
+                        <AddIcon onClick={() => setOpenUpload(true)} style={{marginRight:"3vw", color:'#0095F6'}}/>
+                        <AccountCircleIcon style={{marginLeft:"3vw",color:'#0095F6'}}/>
+                    {/* <Fab style={{backgroundColor:'transparent'}} color="secondary" aria-label="add" className={classes.fabButton}>
+                        
                     </Fab>
+                    <Fab style={{backgroundColor:'transparent'}} color="secondary" aria-label="add" className={classes.fabButton}>
+                        
+                    </Fab> */}
+                    </div>
                 </Toolbar>
             </AppBar>
 
