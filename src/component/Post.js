@@ -10,6 +10,7 @@ import Modal from '@material-ui/core/Modal';
 import {Button} from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 
 function getModalStyle() {
     const top = 50;
@@ -51,10 +52,12 @@ function getModalStyle() {
       },
 
       delbutton: {
-        width: theme.spacing(0.5),
-        height: theme.spacing(0.5),
+        margin: theme.spacing(0),
+        width: theme.spacing(0),
+        height: theme.spacing(0),
         color:'#0095F6'
       }
+
   }));
 
 function Post({postId, username, caption, imageUrl, user}) {
@@ -128,10 +131,10 @@ function Post({postId, username, caption, imageUrl, user}) {
                 </div>
 
                 <div className="post__deletebutton">
-                    {user.displayName===username &&
+                    {user?.displayName===username &&
                         (
                             <IconButton className={classes.delbutton} onClick={() => setOpenDeletePost(true)} aria-label="delete">
-                                <DeleteIcon />
+                                <DeleteIcon fontSize="small"/>
                             </IconButton>
                         // {/* <Button className={classes.child} disabled={user.displayName!==username} onClick={() => setOpenDeletePost(true)}>Delete</Button> */}
                     )}
@@ -145,10 +148,10 @@ function Post({postId, username, caption, imageUrl, user}) {
             <div className="post__comments">
                 {
                 comments.map((comment) => (
-                    <p style={{color:'#454545', marginBottom:"5px"}}>
-                        <strong className="post__commentusername">{comment.username}</strong> {comment.text}
-                    </p>
-                ))  
+                        <p style={{color:'#454545', marginBottom:"5px"}}>
+                             <strong className="post__commentusername">{comment.username}</strong> {comment.text}
+                        </p>
+                    ))  
                 }
             </div>
 

@@ -4,6 +4,33 @@ import InstagramEmbed from 'react-instagram-embed';
 function Embedding() {
     return (
         <div>
+          
+              <InstagramEmbed
+                url='https://www.instagram.com/p/CDPRapGhzlf/?igshid=1vngbtz7tdeav'
+                maxWidth={320}
+                hideCaption={false}
+                containerTagName='div'
+                protocol=''
+                injectScript
+                onLoading={() => {}}
+                onSuccess={() => {}}
+                onAfterRender={() => {}}
+                onFailure={() => {}}
+              />
+              
+            <InstagramEmbed
+              url='https://www.instagram.com/p/CDMRKT1BDJZ/?igshid=ek7urwl82fvf'
+              maxWidth={320}
+              hideCaption={false}
+              containerTagName='div'
+              protocol=''
+              injectScript
+              onLoading={() => {}}
+              onSuccess={() => {}}
+              onAfterRender={() => {}}
+              onFailure={() => {}}
+            />  
+
             <InstagramEmbed
             url='https://www.instagram.com/p/CDEi1aoBIFZ/'
             maxWidth={320}
