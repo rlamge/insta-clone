@@ -19,16 +19,23 @@
   justify-content: center;
 }
 
-/* .app_postsLeft {
-  margin-right: 250px;
+.app_postsLeft {
   justify-content: center;
-} */
+}
 
 @media screen and (max-width: 725px) {
   .app__posts {
     flex-direction: column;
     align-items: center;
+  }
 
+  .app_postsRight {
+    justify-content: center;
+  }
+
+  .app_postsRight {
+    margin-right: 15px;
+    justify-content: center;
   }
 }
 
